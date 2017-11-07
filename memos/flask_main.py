@@ -170,7 +170,6 @@ def get_memos():
 
   app.logger.debug("in get_memos")
   records = []
-  #appended_memos = 0
   for record in db.find():
     record['date'] = arrow.get(record['date']).isoformat()
     record['unique_id'] = str(record['_id'])
